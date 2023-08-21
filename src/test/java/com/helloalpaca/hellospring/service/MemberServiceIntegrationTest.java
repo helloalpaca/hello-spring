@@ -1,32 +1,37 @@
 package com.helloalpaca.hellospring.service;
 
 import com.helloalpaca.hellospring.domain.Member;
-import com.helloalpaca.hellospring.repository.MemoryMemberRepository;
-import org.assertj.core.api.Assertions;
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeEach;
+import com.helloalpaca.hellospring.repository.MemberRepository;
 import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.transaction.annotation.Transactional;
 
-import java.util.Optional;
+import static org.assertj.core.api.Assertions.assertThat;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
-import static org.assertj.core.api.Assertions.*;
-import static org.junit.jupiter.api.Assertions.*;
+@SpringBootTest
+@Transactional
+class MemberServiceIntegrationTest {
 
-class MemberServiceTest {
-
+    @Autowired
     MemberService memberService;
-    MemoryMemberRepository memberRepository;
+    @Autowired
+    MemberRepository memberRepository;
 
+/*
     @BeforeEach
-    public void beforeEach(){
+    public void beforeEach() {
         memberRepository = new MemoryMemberRepository();
         memberService = new MemberService(memberRepository);
     }
+
+
     @AfterEach
-    public void afterEach(){
+    public void afterEach() {
         memberRepository.clearStore();
     }
-
+*/
 
     @Test
     void 회원가입() {
@@ -41,13 +46,14 @@ class MemberServiceTest {
     }
 
     @Test
-    public void 중복_회원_예외(){
+    public void 중복_회원_예외() {
         //given
         Member member1 = new Member();
         member1.setName("spring");
 
         Member member2 = new Member();
         member2.setName("spring");
+
         //when
         memberService.join(member1);
         assertThrows(IllegalStateException.class, () -> memberService.join(member2));
