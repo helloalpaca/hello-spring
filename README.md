@@ -7,7 +7,7 @@ SpringBoot + JPA 강의 정리 레포입니다.
 2. [스프링 핵심 원리 - 기본편](https://www.inflearn.com/course/스프링-핵심-원리-기본편)
     - 23.08.14 ~ 2023.08.22
 3. [스프링 DB 1편 - 데이터 접근 핵심 원리](https://www.inflearn.com/course/스프링-db-1)
-    - 23.08.22 ~
+    - 23.08.22 ~ 23.09.08
 
 <br />
 
