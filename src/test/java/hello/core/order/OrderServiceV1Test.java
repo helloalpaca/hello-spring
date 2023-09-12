@@ -8,7 +8,7 @@ import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-public class OrderServiceV0Test {
+public class OrderServiceV1Test {
 
     MemberService memberService;
     OrderService orderService;
