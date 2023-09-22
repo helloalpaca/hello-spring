@@ -37,6 +37,8 @@ dependencies {
     testAnnotationProcessor("org.projectlombok:lombok")
 
     implementation("javax.inject:javax.inject:1")
+
+    implementation("org.springframework.boot:spring-boot-starter-aop")
 }
 
 tasks.withType<Test> {
