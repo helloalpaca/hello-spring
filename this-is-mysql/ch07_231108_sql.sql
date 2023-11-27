@@ -1,3 +1,7 @@
+-- 변수
+SET @myvar = 12;
+SELECT @myvar;
+
 -- CAST, CONVERT: 데이터 형식 변환 함수 
 Use sqldb;
 SELECT AVG(amount) AS '평균 구매 개수' FROM buytbl;
